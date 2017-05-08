@@ -1,8 +1,9 @@
 const projectsService = require('../../services/projects');
 
+//GET que retorna os projetos em risco
 function get(req, res) {
-  const projects = projectsService.findProjectsAtRisk();
-  return res.status(200).json(projects);
+  const projectsAtRisk = projectsService.findProjectsAtRisk();
+  return res.status(200).json(projectsAtRisk);
 }
 
 module.exports = { get };

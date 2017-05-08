@@ -4,6 +4,7 @@ const router = express.Router();
 
 router.use('/projects', require('./projects'));
 
-router.use('/projects-at-risk', require('./projects-at-risk'));
+//Novo endpoint que apresenta os de projetos classificados como status de risco
+router.use('/projects-at-risk', require('./projects-at-risk')); 
 
 module.exports = router;
