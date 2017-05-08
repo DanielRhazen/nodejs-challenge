@@ -1,7 +1,11 @@
 const projects = require('./data').projects;
 
 function create(project) {
-  return projects.push(project);
+  if (project.name !== '' && project.name !== undefined) {
+    projects.push(project);
+    return true;
+  }
+  return false;
 }
 
 function findAll() {

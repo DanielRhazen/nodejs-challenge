@@ -6,8 +6,11 @@ function get(req, res) {
 }
 
 function post(req, res) {
-  projectsService.create(req.body);
-  return res.status(201).json({ message: 'Project Created' });
+  if (projectsService.create(req.body)){
+    return res.status(201).json({ message: 'Project Created' });  
+  } else {
+    return res.json({ message: 'Missing ProjectName' });
+  }
 }
 
 module.exports = { get, post };
