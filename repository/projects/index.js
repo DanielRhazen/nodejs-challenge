@@ -1,7 +1,5 @@
 const projects = require('./data').projects;
 
-const projectsAtRisk = []; //Lista de projetos classificados como de risco
-
 /* A função create passa a retornar um valor booleano pois quando for acionada pelo metodo POST 
 no endpoint seja possível verificar se foi criado ou nao um novo projeto */
 function create(project) {
@@ -21,6 +19,7 @@ function findProjectsAtRisk() {
   // Inicialização das variaveis que serão usadas como contadores
   let yellow;
   let red;
+  const projectsAtRisk = []; //Lista de projetos classificados como de risco
 
   //Itera sobre os projetos da lista geral
   for(var i = 0; i < projects.length; i++){
